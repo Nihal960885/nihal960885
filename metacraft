@@ -1,48 +1,52 @@
-// create a variable to hold your NFTs
-let nfts = [];
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
 
+// create a variable to hold your NFT's
+  const myNFTs = [];
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT(name, artist, year, description) {
-    // Create an NFT object
-    let nft = {
+ function mintNFT(name, shirtcolour, jewellery, DOB) {
+         const nft = {
         name: name,
-        artist: artist,
-        year: year,
-        description: description
+        shirtcolour: shirtcolour,
+        jewellery: jewellery,
+        DOB: DOB
     };
-    
-    // Store the NFT object in the nfts array
-    nfts.push(nft);
-}
+   myNFTs.push(nft);
+  }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
+
 function listNFTs() {
-    for (let i = 0; i < nfts.length; i++) {
-        console.log("Name: " + nfts[i].name);
-        console.log("Artist: " + nfts[i].artist);
-        console.log("Year: " + nfts[i].year);
-        console.log("Description: " + nfts[i].description);
-        console.log("--------------------------");
+    for (let i = 0; i < myNFTs.length; i++) {
+        console.log("Name: " + myNFTs[i].name);
+        console.log("Shirt Colour: " + myNFTs[i].shirtcolour);
+        console.log("Jewellery: " + myNFTs[i].jewellery);
+        console.log("DOB: " + myNFTs[i].DOB);
+        console.log("\n");  // Adding a new line for better readability
     }
 }
-
 // print the total number of NFTs we have minted to the console
+
 function getTotalSupply() {
-    return nfts.length;
+    return myNFTs.length;
 }
 
 // call your functions below this line
 
-// Mint some NFTs
-mintNFT("Digital Landscape", "Alice", 2021, "A beautiful digital landscape");
-mintNFT("Modern Art", "Bob", 2022, "An abstract modern art piece");
-mintNFT("Vintage Portrait", "Charlie", 2020, "A vintage portrait of a lady");
+mintNFT("Nihal", "black", "bracelet", 2003);
+mintNFT("Vaibhav", "blue", "earrings", 2004);
+mintNFT("Aditya", "yellow", "chain", 2005);
 
-// List all NFTs
 listNFTs();
 
-// Print the total number of NFTs
 console.log("Total NFTs minted: " + getTotalSupply());
