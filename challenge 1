@@ -1,47 +1,49 @@
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.9;
 
-contract VariablesContract {
-    // Declare variables
-    uint public uintVar;
-    string public stringVar;
-    bool public boolVar;
-    address public addressVar;
-
-    // Set functions
-    function setUintVar(uint _uintVar) public returns (uint) {
-        uintVar = _uintVar;
-        return uintVar;
+contract SimpleStorage {
+    uint public number;
+    int public n2;
+    bool public b1;
+    address public addr;
+    constructor() {
+        number = 43;
+        n2 = 67;
+        b1 = true;
+        addr = address(0x4);
+    }
+    function setNumber(uint _number) public returns (uint) {
+        number = _number;
+        return number;
+    }
+    
+    function getNumber() public view returns (uint) {
+        return number;
+    }
+    function setN2(int _n2) public returns (int) {
+        n2 = _n2;
+        return n2;
     }
 
-    function setStringVar(string memory _stringVar) public returns (string memory) {
-        stringVar = _stringVar;
-        return stringVar;
+    function getN2() public view returns (int) {
+        return n2;
     }
 
-    function setBoolVar(bool _boolVar) public returns (bool) {
-        boolVar = _boolVar;
-        return boolVar;
+    function setB1(bool _b1) public returns (bool) {
+        b1 = _b1;
+        return b1;
     }
 
-    function setAddressVar(address _addressVar) public returns (address) {
-        addressVar = _addressVar;
-        return addressVar;
+    function getB1() public view returns (bool) {
+        return b1;
     }
 
-    // Get functions
-    function getUintVar() public view returns (uint) {
-        return uintVar;
+    function setAddr(address _addr) public returns (address) {
+        addr = _addr;
+        return addr;
     }
 
-    function getStringVar() public view returns (string memory) {
-        return stringVar;
-    }
-
-    function getBoolVar() public view returns (bool) {
-        return boolVar;
-    }
-
-    function getAddressVar() public view returns (address) {
-        return addressVar;
+    function getAddr() public view returns (address) {
+        return addr;
     }
 }
